@@ -10,7 +10,7 @@ public class IdGenerator implements IdentifierGenerator{
 
 	@Override
 	public Object generate(SharedSessionContractImplementor session, Object object) {
-		// TODO Auto-generated method stub
+		
 		return "BK_"+new Random().nextInt(100000)+"_"+LocalDate.now().getYear();
 	}
 	

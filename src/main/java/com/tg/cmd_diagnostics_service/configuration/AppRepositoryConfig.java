@@ -1,0 +1,21 @@
+package com.tg.cmd_diagnostics_service.configuration;
+
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+
+@Configuration
+public class AppRepositoryConfig implements RepositoryRestConfigurer {
+	
+	// Customizes the repository REST configuration and CORS settings
+    @Override
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config,
+    		CorsRegistry cors) {
+    	
+    	// Disables exposing CRUD methods by default on repositories
+        config.setExposeRepositoryMethodsByDefault(false);
+    }
+	
+}

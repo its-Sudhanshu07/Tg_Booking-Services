@@ -337,3 +337,11 @@
 2024-04-22 11:07:29,015 DEBUG c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Running with Spring Boot v3.2.5, Spring v6.1.6
 2024-04-22 11:07:29,016 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
 2024-04-22 11:07:35,565 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Started CmdDiagnosticsServiceApplication in 6.862 seconds (process running for 7.418)
+2024-04-22 15:34:00,188 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Starting CmdDiagnosticsServiceApplication using Java 19.0.2 with PID 9436 (C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service\target\classes started by sudha in C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service)
+2024-04-22 15:34:00,190 DEBUG c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-04-22 15:34:00,191 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-22 15:34:10,126 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Started CmdDiagnosticsServiceApplication in 10.425 seconds (process running for 11.257)
+2024-04-29 12:25:07,106 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Starting CmdDiagnosticsServiceApplication using Java 19.0.2 with PID 2816 (C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service\target\classes started by sudha in C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service)
+2024-04-29 12:25:07,108 DEBUG c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-04-29 12:25:07,109 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-29 12:25:19,244 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Started CmdDiagnosticsServiceApplication in 12.626 seconds (process running for 13.523)

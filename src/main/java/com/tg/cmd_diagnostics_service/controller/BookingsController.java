@@ -3,6 +3,7 @@ package com.tg.cmd_diagnostics_service.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,7 @@ public class BookingsController {
 	@Autowired // Injecting DiagnosticService dependency
 	private BookingsService bookingsService;
 	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PostMapping("/bookService") // Maps HTTP POST requests to this method
 	@CrossOrigin(allowedHeaders = "*",origins = "*", 
 	methods=RequestMethod.POST)
@@ -38,6 +40,7 @@ public class BookingsController {
 		return ResponseEntity.status(HttpStatus.OK).body(new ResponseWrapper(addedBookings));
 	}
 	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/{bookingId}")
 	@CrossOrigin(allowedHeaders = "*",origins = "*", 
    	methods=RequestMethod.DELETE)
@@ -54,6 +57,7 @@ public class BookingsController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseWrapper("Booking with ID " + bookingId + " not found"));
     }
 	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/{bookingId}")
 	@CrossOrigin(allowedHeaders = "*",origins = "*", 
    	methods=RequestMethod.GET)
