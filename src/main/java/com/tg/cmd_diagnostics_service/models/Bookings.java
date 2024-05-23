@@ -1,9 +1,8 @@
 package com.tg.cmd_diagnostics_service.models;
 
-
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
-
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -33,19 +32,13 @@ public class Bookings {
 	@Column(name="booking_Id")
 	private String bookingId;	
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name="Services_Offered")
-	private List<ServicesOffered> services;
-	
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name="booking_Date")
 	private LocalDate bookingDate;
 	
-	@Column
-	private String clinicId;
-	
-	@Column
-	private String patientId;
+	@DateTimeFormat(iso= ISO.TIME)
+	@Column(name="booking_Time")
+	private LocalDateTime bookingTime;
 	
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "created_date")
@@ -53,23 +46,25 @@ public class Bookings {
 	
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "modified_date")
-	private LocalDate modifiedDate;
+	private LocalDate lastmodifiedDate;
 
 	@Column(name = "created_by")
 	private String createdBy;
 
 	@Column(name = "modified_by")
-	private String modifiedBy;
+	private String lastmodifiedBy;
 	
-	@Column(name = "patient_email_id")
-	private String patientEmailId;
+	@Enumerated(EnumType.STRING)	
+	@Column(name = "status")
+	private Status status;
 	
-	@Column(name = "is_active")
-	private boolean isActive;
-//	@Autowired
-//	private Patient patient;
-//	
-//	@Autowired
-//	private Clinic clinic;
-
+	@Autowired
+	private Patient patient; 
+	
+	@Autowired
+	private Clinic clinic;
+	
+	@Autowired
+	@Column(name="Services_Offered")
+	private List<Services> services;
 }

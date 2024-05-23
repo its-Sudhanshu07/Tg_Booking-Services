@@ -1,13 +1,7 @@
 package com.tg.cmd_diagnostics_service.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.json.JsonParser;
-import org.springframework.boot.json.JsonParserFactory;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import com.tg.cmd_diagnostics_service.exceptions.DiagnosisNotFoundException;
 import com.tg.cmd_diagnostics_service.externalservice.ClinicServiceFactory;
@@ -23,7 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class BookingsServiceImpl implements BookingsService  {
-
+	
+	// Injects the BookingsRepository dependency for interacting with the database
 	@Autowired
 	public BookingsRepository bookingsRepository;
 
@@ -32,7 +27,8 @@ public class BookingsServiceImpl implements BookingsService  {
 
 		boolean isServiceOfferedByClinic = false;
 		boolean isPatientActive = false;
-
+		
+		// Checks if the service is offered by the clinic
 		if (checkForServiceAvailabilityInClinic(bookings)) {
 			isServiceOfferedByClinic = true;
 		} else {
@@ -44,7 +40,8 @@ public class BookingsServiceImpl implements BookingsService  {
 		} else {
 			log.info("Failed");
 		}
-
+		
+		// If both conditions are true, save the booking
 		if (isServiceOfferedByClinic && isPatientActive) {
 
 			return this.bookingsRepository.save(bookings);
@@ -77,13 +74,15 @@ public class BookingsServiceImpl implements BookingsService  {
 	}
 
 	private boolean getPatientStatusFromPatientApi(Bookings bookings) {
-
+		
+		// Checks if the patient is active using a mock service
 		IPatientService service = PatientServiceFactory.create("Mock");
 		return service.getPatientStatusFromPatientApi(bookings);
 	}
 
 	private boolean checkForServiceAvailabilityInClinic(Bookings bookings) {
-
+		
+		// Checks if the service is offered by the clinic using a mock service
 		IClinicService service = ClinicServiceFactory.create("Mock");
 		return service.isServiceOfferedByClinic(bookings);
 	}

@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Patient {
 	
-	private String Name;
-	private long mobileNo;
+	private String patientId;
+	private String patientName;
+	private String phoneNumber;
+	private String patientEmailId; 
 	private boolean isActive;
 }

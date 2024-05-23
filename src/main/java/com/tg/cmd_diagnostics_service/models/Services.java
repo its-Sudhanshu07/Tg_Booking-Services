@@ -1,6 +1,5 @@
 package com.tg.cmd_diagnostics_service.models;
 
-
 import java.util.List;
 
 import jakarta.persistence.EnumType;
@@ -12,10 +11,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Clinic {
-	
-	private String clinicId;
-	private String clinicName;
-	
-	
+public class Services {
+
+	private String serviceId;
+	@Enumerated(EnumType.STRING)	
+	private List<ServicesOffered> serviceName;
+	private double serviceCost; 
 }

@@ -18,27 +18,29 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	public User saveUser(User user)
-	{
+	public User saveUser(User user){
+		
+		// Debugging: prints the original password
 		System.out.println(user.getPassword());
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		// Saves the user to the repository and returns the saved user
 		return this.userRepository.save(user);
 		
 	}
 	
-	public List<User> getUsers()
-	{
-		return this.userRepository.findAll();
+	public List<User> getUsers(){
 		
+		return this.userRepository.findAll();		
 	}
 	
-	public User getUserByName(String userName)
-	{
+	public User getUserByName(String userName){
+		
 		return this.userRepository.findById(userName).orElse(null);
 	}
 	
-	public List<Role> getRoles(String userName)
-	{
+	public List<Role> getRoles(String userName){
+		
+		// Retrieves the user by username
 		User user =this.userRepository.findById(userName).orElse(null);
 		if(user!=null)
 			return user.getRoles();

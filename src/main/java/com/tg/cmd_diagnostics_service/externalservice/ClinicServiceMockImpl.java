@@ -5,11 +5,13 @@ import java.util.List;
 
 import com.tg.cmd_diagnostics_service.models.Bookings;
 import com.tg.cmd_diagnostics_service.models.Clinic;
+import com.tg.cmd_diagnostics_service.models.Services;
 import com.tg.cmd_diagnostics_service.models.ServicesOffered;
 
 public class ClinicServiceMockImpl implements IClinicService{
 	
 	Clinic clinic=new Clinic();
+	Services serviceList=new Services();
 	@Override
 	public boolean isServiceOfferedByClinic(Bookings bookings) {
 		
@@ -20,10 +22,10 @@ public class ClinicServiceMockImpl implements IClinicService{
 		services.add(ServicesOffered.BloodTest);
 		services.add(ServicesOffered.CovidTest);
 		services.add(ServicesOffered.CTScan);
-		clinic.setServicesOffered(services);
+		serviceList.setServiceName(services);
 		
 		// Iterate over the requested services in the Diagnostics object
-		for(ServicesOffered serviceRequested: bookings.getServices()) {
+		for(Services serviceRequested: bookings.getServices()) {
 			// Check if each requested service is among the clinic's offered services
 			for(ServicesOffered service:services) {
 				// If a match is found, set the flag to true and break out of the loop

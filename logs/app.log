@@ -345,3 +345,22 @@
 2024-04-29 12:25:07,108 DEBUG c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Running with Spring Boot v3.2.5, Spring v6.1.6
 2024-04-29 12:25:07,109 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
 2024-04-29 12:25:19,244 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Started CmdDiagnosticsServiceApplication in 12.626 seconds (process running for 13.523)
+2024-04-30 14:04:49,134 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Starting CmdDiagnosticsServiceApplication using Java 19.0.2 with PID 13056 (C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service\target\classes started by sudha in C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service)
+2024-04-30 14:04:49,135 DEBUG c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-04-30 14:04:49,136 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-30 14:05:03,614 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Started CmdDiagnosticsServiceApplication in 15.003 seconds (process running for 15.844)
+2024-04-30 14:16:32,338 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Starting CmdDiagnosticsServiceApplication using Java 19.0.2 with PID 4168 (C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service\target\classes started by sudha in C:\Users\sudha\eclipseWorkspace\cmd_diagnostics_service)
+2024-04-30 14:16:32,341 DEBUG c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-04-30 14:16:32,342 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-30 14:16:41,223 INFO c.t.c.CmdDiagnosticsServiceApplication [restartedMain] Started CmdDiagnosticsServiceApplication in 9.314 seconds (process running for 10.007)
+2024-04-30 14:18:41,475 INFO c.t.c.s.i.BookingsServiceImpl [http-nio-8060-exec-5] Fetching diagnosis by ID: BK_36989_2024
+2024-05-05 15:19:23,627 INFO c.t.c.s.i.BookingsServiceImpl [main] Fetching diagnosis by ID: non-existent
+2024-05-05 15:19:23,658 INFO c.t.c.s.i.BookingsServiceImpl [main] Failed
+2024-05-05 15:19:23,666 INFO c.t.c.s.i.BookingsServiceImpl [main] Fetching diagnosis by ID: 12345
+2024-05-05 15:19:23,669 INFO c.t.c.s.i.BookingsServiceImpl [main] Attempting to delete booking with ID: 123456
+2024-05-05 15:19:23,670 ERROR c.t.c.s.i.BookingsServiceImpl [main] Failed to delete booking with ID: 123456
+2024-05-22 16:53:24,356 INFO c.t.c.s.i.BookingsServiceImpl [main] Fetching diagnosis by ID: non-existent
+2024-05-22 16:53:24,380 INFO c.t.c.s.i.BookingsServiceImpl [main] Failed
+2024-05-22 16:53:24,386 INFO c.t.c.s.i.BookingsServiceImpl [main] Fetching diagnosis by ID: 12345
+2024-05-22 16:53:24,390 INFO c.t.c.s.i.BookingsServiceImpl [main] Attempting to delete booking with ID: 123456
+2024-05-22 16:53:24,390 ERROR c.t.c.s.i.BookingsServiceImpl [main] Failed to delete booking with ID: 123456

@@ -18,8 +18,6 @@ import com.tg.cmd_diagnostics_service.dtos.ResponseWrapper;
 import com.tg.cmd_diagnostics_service.models.Bookings;
 import com.tg.cmd_diagnostics_service.services.BookingsService;
 
-
-
 @RestController
 @RequestMapping("/bookings")// Base URL mapping for all endpoints in this controller
 public class BookingsController {

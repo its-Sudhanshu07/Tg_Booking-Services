@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.tg.cmd_diagnostics_service.models.Bookings;
+import com.tg.cmd_diagnostics_service.models.Patient;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,6 +21,7 @@ public class PatientServiceImpl implements IPatientService{
 	@Autowired
     private RestTemplate restTemplate;
 	private ResponseEntity<String> response;
+	private Patient patient;
 	
 	@Value("${patientApiUrl}")
     private String patientApiUrl; // Base URL for patient service API
@@ -28,7 +30,7 @@ public class PatientServiceImpl implements IPatientService{
 	public boolean getPatientStatusFromPatientApi(Bookings bookings) {
 		
 		// REST call to get patient status based on patientId
-        String url = String.format("%s/patient/%s/status", patientApiUrl, bookings.getPatientId());
+        String url = String.format("%s/patient/%s/status", patientApiUrl, patient.getPatientId());
         response = restTemplate.exchange(url, HttpMethod.GET, null, String.class);
         log.info("Response" + response.getBody());
         

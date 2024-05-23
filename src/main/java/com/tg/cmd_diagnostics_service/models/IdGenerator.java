@@ -6,6 +6,7 @@ import java.util.Random;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
 
+@SuppressWarnings("serial")
 public class IdGenerator implements IdentifierGenerator{
 
 	@Override

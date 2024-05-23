@@ -16,9 +16,10 @@ import org.springframework.stereotype.Service;
 import com.tg.cmd_diagnostics_service.models.Role;
 import com.tg.cmd_diagnostics_service.models.User;
 
+//Implementation of UserDetailsService to load user details for Spring Security
 @Service
 public class UserAuthService implements UserDetailsService {
-
+		
 	@Autowired
 	private UserService userService;
 
@@ -27,14 +28,18 @@ public class UserAuthService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// Retrieves the user by username using the UserService
 		User user = userService.getUserByName(username);
 		if (user == null) {
 			throw new UsernameNotFoundException("User '" + username + "' not found.");
 		}
+		// Gets the roles associated with the user
 		List<Role> roles = userService.getRoles(username);
 		List<GrantedAuthority> grantedAuthorities = roles.stream().map(r -> {
 			return new SimpleGrantedAuthority(r.getRoleName());
 		}).collect(Collectors.toList());
+		
+		// Returns a UserDetails object for Spring Security, containing the username, password, and authorities
 		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
 				grantedAuthorities);
 	}
